@@ -1,0 +1,65 @@
+print('one', end='')
+import random
+
+print ("welcome,")
+
+user = input("whats your name?")
+
+print ("hello",user)
+
+print ("are you ready to start?")
+
+startGame = input('enter yes or no')
+
+match startGame:
+    case " yes":
+        print("lets begin")
+    case "yes":
+        print("lets begin")
+    case " no":
+        print("goodbye")
+    case "no":
+        print("goodbye")
+    case _:
+        print ('error')
+        
+hp = int(100)
+lvl = int(0)
+exp = int(0)
+
+
+print ("your stats\n", "hp:",hp,"\n","lvl:",lvl,"\n","exp:",exp)
+
+print ("a monster  aproaches you, do you fight?")
+firstfight = input('enter yes or no')
+items = ['1','2']
+playhit = ['hit','miss']
+mhp = int(75)
+mstat =  print ("monster HP:",mhp)
+match firstfight:
+ 
+ 
+    case "yes":
+        firstturn = random.choice(items)
+        match firstturn:
+            case '1':
+                print("your turn")
+                playran = random.choice(playhit)
+                match playhit:
+                    case 'hit':
+                        print('you hit the monster')
+                        mhp = (mhp - random.randint(1,10))
+                        print ("monster HP:",mhp)
+                    case 'miss':
+                        print("youmissed!")
+            case '2':
+                print("monster turn")
+                monshitormiss = ['hit','miss']
+                monrann = random.choice(monshitormiss)
+                match monrann:
+                    case 'hit':
+                        print ("monst hits you")
+                        hp = (hp - (random.randint(1,10)))
+                        print ("your stats\n", "hp:",hp,"\n","lvl:",lvl,"\n","exp:",exp)
+        
+
